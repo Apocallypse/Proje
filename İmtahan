@@ -1,7 +1,8 @@
-# 1
+# 1 Düzbucaqlı üçbucağın sahəsini hesablayan funksiya yazın.
 def sahetap(a,h):
     return 0.5 * a * h
-# 2
+
+#2 Sözdən təkrarlanan hərfləri silən funksiya yazın.
 def tekrarsil(a):
     soz,t = "",""
     for c in a: # sozdeki herfleri gezirik
@@ -9,11 +10,13 @@ def tekrarsil(a):
             soz+=c # eyni deyilse soze elave edirik
         t = c # indiki herfi evvelki herf kimi yadda saxlayiriq
     return soz
-# 3
+
+# 3 Verilmiş ədədin içində bütün rəqəmlərin olub olmamasını yoxlayan funksiya yazın.
 def butunreqemler(eded):
     return list(filter(lambda x: str(x) not in str(eded) ,range(1,10))) # [1,9] araligini filter edirik    
 print(butunreqemler(98305614820698024492))
-# 4
+
+# 4 Nömrələrin qiymətlərini yoxlayan funksiya yazın.
 def nomre(a):
     emsal = 1
     if(a.startswith("10")): # startswith funksiyasi stringin ona verilen argumentle baslayib baslamadigina gor True ve ya False return edir 
@@ -29,11 +32,13 @@ def nomre(a):
     print(emsal*50)
 
 nomre("10-UU-556")
-# 5
+
+# 5 Ədədin onu təşkil edən rəqəmlərin cəminə qalıqsız bölündüyünü müəyyən edən funksiya yazın.
 def bolunen(eded):
     return eded % sum([int(i) for i in str(eded)])
 print(bolunen(131))
-# 6
+
+# 6 Ədədin rəqəmlərinin hasilinin rəqəm olması üçün neçə dövr getməli olduğunu bildirən funksiya yazın.
 def multN(n,a=1):
     while(n//10 != 0):
         a,n=a*(n%10),n//10
@@ -42,26 +47,38 @@ def addim(num,counter = 0):
     if(num in range(10)): return counter
     return addim(multN(num),counter+1)
 print(addim(77))
-# 7
+
+# 7 3-ə və 5-ə tam bölünən 100-dən kiçik ədədlərin siyahısını çap edən proqram yazın.
 def tambolunen35():
     return list(filter(lambda x: x%3==0 and x%5==0 ,range(1,100)))
 print(tambolunen35())
-# 8 
+
+# 8 Daxil edilmiş ədədə qədər olan cüt ədədlərin sayını tapın
 print(len(list(range(0,int(input("Eded daxil edin: ")),2)))) 
-# 9
+
+# 9 Verilmiş siyahıda 3-dən böyük ədədləri silmək.[2,2,4,3,6,9,6,1,5,1]
 m = [2,2,4,3,6,9,6,1,5,1] # siyahi verilib
 for a in range(len(m)-1,-1,-1):
     if(m[a]>3):
         m.pop(a)
 print(m)
 
-# 10
+
+# 10 Trade şirkətində məhsulun 12 aylıq qiymətləri var. Hansı ayda məhsulu alıb digər ayda satsaq daha çox qazanc əldə etmiş olarıq?
 ayliqqiymetler = [136,151,125,119,146,133,118,106,138,136,127,101]
 print(str(ayliqqiymetler.index(min(ayliqqiymetler))+1)+" ayda mali alib "+str(ayliqqiymetler.index(max(ayliqqiymetler))+1)+" ayda satmaq lazimdir")
-# 11
+
+# 11 Çıxışda
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+yazılacaq proqram yazın.
 for i in range(1,6):
     print((i*str(i)).center(5))
-# 12
+
+# 12 Çıxışda 100-ə qədər olan Fibonaçi ədədlərini göstərən proqram yazın.
 # fibonacci seriyasi: 0,1,1,2,3,5,8 
 def fibonacci(eded,evvelkieded):
     if eded > 100:
@@ -69,117 +86,155 @@ def fibonacci(eded,evvelkieded):
     print(eded)
     return fibonacci(eded+evvelkieded,eded)
 fibonacci(1,0)
-# 13
+
+# 13 Girişdə verilmiş istənilən sayda ədədin cəmini çıxışda göstərən proqram yazın.
 print(sum([int(a) for a in input("Ededler: ").split(",")]))
-# 14
+
+# 14 Girişdə verilmiş cümlənin son sözünü çıxışda göstərən proqram yazın.
 print(input("Cumle: ").split(" ")[-1])
-# 15
+
+# 15 Girişdə verilmiş ədədlərin çıxışda kvadratını yazın.
 print([int(a)**2 for a in input("Ededler: ").split(",")])
-# 16
+
+# 16 100-dən 200-ə qədər 3ə bölünüb 5ə bölünməyən ədələrin sayını tapın.
 print(len(list(filter(lambda x: x%3==0 and x%5!=0 ,range(100,200)))))
-# 17
+
+# 17 Daxil edilmiş cümlədə olan saitlərin sayını tapan proqram yazın.
 saitler = ["a","ı","o","u","e","ə","i","ö","ü"]
 print(len(list(filter(lambda x: x in saitler,input("Cumle : ")))))
-# 18
+
+# 18 Verilmiş rəqəmləri muxtəlif olan 9 rəqəmli ədəddə iştirak etməyən rəqəmi çıxışa verən funksiya yazın
 eded = input("Eded: ")
 print(list(filter(lambda x: str(x) not in eded ,range(0,10))))
-# 19
+
+# 19 Verilmiş cümlədəki sözləri əks ardıcıllıqla çıxışa verən funksiya yazın
 print(input("Cumle: ").split()[::-1])
-# 20
+
+# 20 Verilmiş cümlədəki ən qısa sözün çıxışa verən funksiya yazın.
 l = {len(a):a for a in input("Cumle: ").split(" ")}
 print(l[min(l.keys())])
-# 21
+
+# 21 Verilmiş cümlədəki ən uzun sözün çıxışa verən proqram yazın
 l = {len(a):a for a in input("Cumle: ").split(" ")}
 print(l[max(l.keys())])
-# 22
+
+# 22 Verilmiş cümlədəki sozlərin sayını çıxışa verən proqram yazın
 print(len(input("Cumle: ").split(" ")))
-# 23
+
+# 23 Daxil edilmiş cümlədə 4 hərifli sozlərin sayını çıxışa verən proqram yazın
 l = {a:len(a) for a in input("Cumle: ").split(" ")}
 print(len(list(filter(lambda x: x==4,l.values()))))
-# 24
+
+# 24 Daxil edilmiş cümlədə 'a' hərifi ilə başlayan və sonu 'm' ilə bitən sozləri çıxışa verən proqram yazın.
 print(list(filter(lambda x: x.startswith("a") and x.endswith("m"),input("Cumle : ").split(" "))))
-# 25 
+
+# 25 Daxil edilmiş cümlədə sonu 'lar' ilə bitən sozlərin sayını çıxışa verən proqram yazın. 
 print(len(list(filter(lambda x: x.endswith("lar"),input("Cumle : ").split(" ")))))
+
 # 26 : 22 ile eyni
-# 27
+
+# 27 Arqument kimi tək bir sətri götürən və sətirdəki bütün böyük hərflərin indekslərin olduğu sıralanmış 
+siyahı(list) qaytaran funksiya yaradın. myFunction(“HeLlo WorD”) → [0,2,6,9]
 setr = input("Setr: ")
 print(list(filter(lambda x: setr[x].isupper(),range(0,len(setr)))))
-# 28
+
+# 28 isogram dublikat hərfləri olmayan sözdür. Sətir götürən və "isogram" olub-olmamasından asılı olaraq True və ya False qaytaran funksiya yaradın.
 def isogram(soz):
     l = {a:soz.count(a) for a in soz}
     return len(list(filter(lambda x: x != 1,l.values()))) == 0
 print(isogram(input("Soz: ")))
-# 29
+
+# 29 Bir sətri tamamilə böyük hərflərə və ya tamamilə kiçik hərflərə çevirmək üçün lazım olan ən kiçik addımları (
+hansının ən az sayda addım atmasından asılı olaraq) qaytaran funksiya yaradın. Addım bir simvolun kiçik
+hərfdən böyük hərfə və ya əksinə dəyişdirilməsindən ibarətdir.
 def convert(soz):
     boyukHerfSayi = len(list(filter(lambda x: x.isupper(),[a for a in soz])))
     kicikHerfSayi = len(list(filter(lambda x: x.islower(),[a for a in soz])))
     return boyukHerfSayi if boyukHerfSayi < kicikHerfSayi else kicikHerfSayi
 print(convert(input("Soz: ")))
-# 30
+
+
+# 30 Üçrəqəmli natural ədəd verilib. Onun Armstronq ədədi olub-olmadığını müəyyən edin. (Armstronq ədədində rəqəmlərin 3-cü qüvvətinin cəmi həmin ədədə bərabərdir.
 def armstrongnumber(eded):
     reqemler =  [int(a) for a in str(eded)]
     return eded == sum([a**3 for a in reqemler])
 print(armstrongnumber(153))
-# 31
+
+# 31 4 rəqəmli natural ədəd verilmişdir. Onun palindrom ədəd olduğunu təyin edin.
+Qeyd: tam ədəd o zaman palindrom sayılır ki, soldan - sağa və əksinə eyni cür oxunur, məs, 2332 ədədi
+palindrom sayılır.
 def polindromecheck(eded):
     return str(eded) == str(eded)[::-1] 
 print(polindromecheck(2872))
-# 32
+
+# 32 Beşrəqəmli natural ədəd verilmişdir. Ən solda yerləşən rəqəmdən başlayaraq bütün rəqəmlərin artma sırası
+ilə yerləşdiyini müəyyən etmək lazımdır.
 def artmasirasi(eded):
     reqemler = [int(a) for a in eded] # eded reqemlerine bolunur, int-e cevirib listde saxlayiriq
     return reqemler == sorted(reqemler)
 print(artmasirasi((input("Eded: "))))
-# 33
+
+# 33 4-rəqəmli tam müsbət ədəd verilmişdir. Bu ədədin öz rəqəmlərin hamısına bölün düyünü təyin edin.
 def ozreqemlerinebolunur(eded):
     reqemler = [int(a) for a in eded]
     return len(list(filter(lambda x: int(eded)%x==0,reqemler))) == len(eded)
 print(ozreqemlerinebolunur(input("Eded: ")))
-# 34
+
+# 34 4-rəqəmli natural ədədi verilmişdir. Bu ədədin yazılışından cüt rəqəmləri silin (0 - cüt rəqəm kimi qəbul edin).
 def cutsil(eded):
     return "".join(list(filter(lambda x: int(x)%2!=0,[a for a in eded])))
 print(cutsil(input("Eded: ")))
-# 35
+
+# 35 Dördrəqəmli natural ədəd verilib. Onun rəqəmlərinin bir birindən fərqli olduğunu müəyyən edin. Əgər fərqlidirsə, "YES" çıxışa verin, əks halda - "NO".
 def NOYES(eded):
     l = {a:eded.count(a) for a in eded}
     return "YES" if len(list(filter(lambda x: x!=1,l.values()))) == 0 else "NO"
 print(NOYES(input("Eded: ")))
-# 36
+
+# 36 Bir siyahının(list) dayaq nöqtəsi solundakı bütün elementlər ve sağındakı bütün elementlərin cəmi eyni olan bir ədəddir. Bir siyahının(list) dayaq nöqtəsini tapan funksiya yazın.
 def dayaqNoqtesi(list):
     for a in range(1,len(list)):
         if sum(list[:a]) == sum(list[a+1:]):
             return list[a]
 print(dayaqNoqtesi([9,1,9]))
-# 37
+
+# 37 Verilmiş ədədə qədər olan Fibonaççi ədədlərini çap eden funksiya yazın.
 def fibonacci(vereded,eded=1,evvelkieded=0):
     if eded > vereded:
         return
     print(eded)
     return fibonacci(vereded,eded+evvelkieded,eded)
 fibonacci(10)
-# 38
+
+# 38 Bir cümələ (və ya söz) və həriflər siyahısı verilmişdir. Cümələdə olan sözərdə siyahıda olmayan hərifləri "-" əvəz edən funksiya yazın.
 def myFunction(soz,herfler):
     for a in soz:
         if a not in herfler:
             soz = soz.replace(a,"-")
     return soz
 print(myFunction("helicopter",["o","e","s"]))
-# 39 
+
+# 39 Daxil edilmiş (input funlsiyasi ilə) ədədə qədər olan 7-yə bölünən ədədlərin hasilini hesablayan funksiy yazin
 ededler = list(filter(lambda x: x%7==0,range(1,int(input("Eded: ")))))
 hasil = 1
 for i in ededler:
     hasil*=i
 print(hasil)
-# 40
+
+# 40 Yeni siyahı(list) yaradın və daxil edilmiş (input funlsiyasi ilə) ədədə qədər olan və 3 rəqəmi ilə bitən ədədləri həmin siyahiya əlavə edin,
 siyahi = list(filter(lambda x: str(x).endswith("3"),range(1,int(input("Eded: ")))))
 print(siyahi)
-# 41
+
+# 41 Yeni siyahı(list) yaradın və daxil edilmiş (input funlsiyasi ilə) x ədədindən y ədədinə qədər olan və və 6 - ə bölunməyən ədədləri həmin siyahiya əlavə edin
 x,y = input("X,Y : ").split(",")
 siyahi = list(filter(lambda x: x%6!=0,range(int(x),int(y))))
 print(siyahi)
-# 42
+
+# 42 Daxil edilmiş cümlədə 4 hərifli sozlərin sayını çıxışa verən proqram yazın.,
 l = { a:len(a) for a in input("Cumle : ").split(" ")}
 dordheriflisozsayi = len(list(filter(lambda x: x==4,l.values())))
 print(dordheriflisozsayi) 
-# 43
+
+# 43 Daxil edilmiş cümlədə sonu 'lar' ilə bitən sozlərin sayını çıxışa verən proqram yazın.
 sonularilebiten = len(list(filter(lambda x: x.endswith("lar"),input("Cumle : ").split(" "))))
 print(sonularilebiten) 
